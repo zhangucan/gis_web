@@ -1,0 +1,26 @@
+{
+  "apps" : [{
+    "name"      : "API",
+    "script"    : "start.js",
+    "env": {
+      "COMMON_VARIABLE": "true"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }],
+  "deploy" : {
+    "production" : {
+      "user" : "root",
+      "host" : ["47.105.47.65"],
+      "port" : "22",
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:zhangucan/gis_web.git",
+      "path" : "/var/www/gis_web",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "env"  : {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
